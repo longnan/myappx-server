@@ -7,13 +7,13 @@ call env.bat
 REM ######################################################
 REM Stopping and removing containers...
 REM ######################################################
-docker-compose -p myappx-server -f ../images/myappxserver/docker-compose-test.yml down -v
+docker-compose -p myappx-server -f ../images/myappxserver/docker-compose.yml down -v
 
-docker-compose -f ../images/traefik/docker-compose-test.yml down -v
-docker-compose -f ../images/portainer/docker-compose-test.yml down -v
-docker-compose -f ../images/greenmail/docker-compose-test.yml down -v
-docker-compose -f ../images/pgadmin4/docker-compose-test.yml down -v
-docker-compose -f ../images/pgsql/docker-compose-test.yml down -v
+docker-compose -f ../images/traefik/docker-compose.yml down -v
+docker-compose -f ../images/portainer/docker-compose.yml down -v
+docker-compose -f ../images/greenmail/docker-compose.yml down -v
+docker-compose -f ../images/pgadmin4/docker-compose.yml down -v
+docker-compose -f ../images/pgsql/docker-compose.yml down -v
 
 REM ###### Prune all stopped containers
 docker container prune -f

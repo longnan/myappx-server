@@ -19,18 +19,18 @@ docker network create -d bridge myappx-net
 REM ######################################################
 REM Building images...
 REM ######################################################
-docker-compose -f ../images/myappxserver/docker-compose-test.yml build --build-arg MYAPPX_TAG=%MYAPPX_TAG%
+docker-compose -f ../images/myappxserver/docker-compose.yml build --build-arg MYAPPX_TAG=%MYAPPX_TAG%
 
 REM ######################################################
 REM Starting...
 REM ######################################################
-docker-compose -f ../images/pgsql/docker-compose-test.yml up --force-recreate -d
-docker-compose -f ../images/traefik/docker-compose-test.yml up --force-recreate -d
-docker-compose -f ../images/greenmail/docker-compose-test.yml up --force-recreate -d
-docker-compose -f ../images/pgadmin4/docker-compose-test.yml up --force-recreate -d
-docker-compose -f ../images/portainer/docker-compose-test.yml up --force-recreate -d
+docker-compose -f ../images/pgsql/docker-compose.yml up --force-recreate -d
+docker-compose -f ../images/traefik/docker-compose.yml up --force-recreate -d
+docker-compose -f ../images/greenmail/docker-compose.yml up --force-recreate -d
+docker-compose -f ../images/pgadmin4/docker-compose.yml up --force-recreate -d
+docker-compose -f ../images/portainer/docker-compose.yml up --force-recreate -d
 
-docker-compose -p myappx-server -f ../images/myappxserver/docker-compose-test.yml up --force-recreate -d
+docker-compose -p myappx-server -f ../images/myappxserver/docker-compose.yml up --force-recreate -d
 
 REM ######################################################
 REM List all
