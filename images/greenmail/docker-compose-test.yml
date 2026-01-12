@@ -1,0 +1,47 @@
+networks:
+  default-net:
+    external: true
+    name: myappx-net
+
+services:
+  greenmail: 
+    # https://github.com/greenmail-mail-test/greenmail
+    image: greenmail/standalone:${IMAGE_GREENMAIL_TAG}
+    container_name: myappx-greenmail
+    environment:
+      # preconfigured account: 
+      - JAVA_OPTS=-Dgreenmail.users.login=email -Dgreenmail.users=pgadmin4:Passw0rd@local.corp,support:Passw0rd@local.corp
+      - GREENMAIL_OPTS=-Dgreenmail.setup.all -Dgreenmail.hostname=0.0.0.0
+    # ports:
+    #   - 25:25 # SMTP
+    #   - 110:110 # POP3
+    #   - 143:143 # IMAP
+    #   - 465:465 # SMTPS
+    #   - 993:993 # IMAPS
+    #   - 995:995 # POP3S
+    networks:
+      - default-net
+
+  roundcube:
+    image: roundcube/roundcubemail:${IMAGE_ROUNDCUBEMAIL_TAG}
+    container_name: myappx-roundcube
+    restart: unless-stopped
+    depends_on:
+      - greenmail
+    environment:
+      - ROUNDCUBEMAIL_DEFAULT_HOST=myappx-greenmail  # IMAP server - tls:// prefix for STARTTLS
+      - ROUNDCUBEMAIL_DEFAULT_PORT=143               # IMAP port
+      - ROUNDCUBEMAIL_SMTP_SERVER=myappx-greenmail   # SMTP server - tls:// prefix for STARTTLS
+      - ROUNDCUBEMAIL_SMTP_PORT=25                   # SMTP port
+      - ROUNDCUBEMAIL_REQUEST_PATH=/greenmail
+    labels: 
+      # https://localhost/greenmail/ 
+      - "traefik.enable=true"
+      - "traefik.http.services.greenmail.loadbalancer.server.port=80"
+      - "traefik.http.routers.greenmail.entrypoints=websecure"
+      - "traefik.http.routers.greenmail.rule=Host(`localhost`) && PathPrefix(`/greenmail`)"
+      - "traefik.http.routers.greenmail.tls=true"
+      - "traefik.http.routers.greenmail.middlewares=greenmail-stripprefix"
+      - "traefik.http.middlewares.greenmail-stripprefix.stripprefix.prefixes=/greenmail"
+    networks:
+      - default-net

@@ -1,0 +1,35 @@
+networks:
+  default-net:
+    external: true
+    name: myappx-net
+
+services:
+  traefik:
+    image: traefik:${IMAGE_TRAEFIK_TAG}
+    container_name: myappx-traefik
+    restart: unless-stopped
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config/:/etc/traefik/config/:ro
+      - ./traefik.toml:/etc/traefik/traefik.toml
+      - ../../bin/tls/myappx-server-cert.pem:/run/secrets/cert.crt
+      - ../../bin/tls/myappx-server-key.pem:/run/secrets/cert.key
+    ports:
+      - 80:80
+      - 443:443
+    command: traefik --configFile /etc/traefik/traefik.toml
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider --proxy off localhost:8080/ping || exit 1"]
+      interval: 3s
+      timeout: 5s
+    networks:
+      - default-net
+    labels:
+      - "traefik.enable=true"
+      # conflict with idempiere-rest api
+      # - "traefik.http.routers.traefik.rule=HostRegexp(`{host:.+}`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+      - "traefik.http.routers.traefik.rule=HostRegexp(`{host:.+}`)"
+      - "traefik.http.routers.traefik.entrypoints=websecure"
+      - "traefik.http.routers.traefik.tls=true"
+      - "traefik.http.routers.traefik.service=api@internal"

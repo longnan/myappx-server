@@ -1,0 +1,32 @@
+networks:
+  default-net:
+    external: true
+    name: myappx-net
+
+volumes:
+  portainer_data:
+    external: true
+    name : myappx_portainer_data
+
+services:
+  portainer:
+    image: portainer/portainer-ee:${IMAGE_PORTAINER_TAG}
+    container_name: myappx-portainer
+    restart: unless-stopped
+    command: --log-level DEBUG -H unix:///var/run/docker.sock --tlsskipverify --admin-password='$$2y$$05$$AeDV4GhfO8IZ9sVwSMJmPu0UUynCvgc7X1Ua61DEcJR3vnzZtSjdG' 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    ports:
+      - 9000:9000
+    networks:
+      - default-net
+    labels: 
+      # https://localhost/portainer/
+      - "traefik.enable=true"
+      - "traefik.http.services.portainer.loadbalancer.server.port=9000"
+      - "traefik.http.routers.portainer.rule=Host(`localhost`) && PathPrefix(`/portainer`)"
+      - "traefik.http.routers.portainer.entrypoints=websecure"
+      - "traefik.http.routers.portainer.tls=true"
+      - "traefik.http.routers.portainer.middlewares=portainer-stripprefix"
+      - "traefik.http.middlewares.portainer-stripprefix.stripprefix.prefixes=/portainer"

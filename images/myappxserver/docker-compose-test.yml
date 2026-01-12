@@ -1,0 +1,67 @@
+networks:
+    default-net:
+        external: true
+        name: myappx-net
+
+services:
+    myappx_server:
+        image: myappx/myappx-server:${MYAPPX_TAG}
+        container_name: myappx-server
+        restart: unless-stopped
+        environment:
+            TZ: "Asia/Shanghai"
+            MYAPPX_DEBUG: ${MYAPPX_DEBUG}
+            JAVA_OPTIONS: "-Xms512M -Xmx1024M"
+            DB_HOST: ${MYAPPX_DB_HOST}
+            DB_PORT: ${MYAPPX_DB_PORT}
+            DB_NAME: ${MYAPPX_DB_NAME}
+            DB_USER: ${MYAPPX_DB_USER}
+            DB_PASS: ${MYAPPX_DB_PASS}
+            DB_ADMIN_PASS: ${POSTGRES_PASSWORD}
+            MIGRATE_EXISTING_DATABASE: ${MYAPPX_MIGRATE_EXISTING_DATABASE}
+        build:
+            context: .
+            dockerfile: MyappxServer.Dockerfile
+        ports:
+            - 4554:4554 # debug
+            - 8080:8080
+            - 8443:8443
+        networks:
+            - default-net
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.myappx-server.rule=Host(`localhost`) && PathPrefix(`/`)"
+            - "traefik.http.routers.myappx-server.entrypoints=websecure"
+            - "traefik.http.routers.myappx-server.tls=true"
+            - "traefik.http.services.myappx-server.loadbalancer.server.port=8080"
+
+
+    # myappx_server:
+    #     image: myappx/myappx-server-karaf:${MYAPPX_TAG}
+    #     container_name: myappx-server
+    #     environment:
+    #         TZ: "Asia/Shanghai"
+    #         MYAPPX_DEBUG: ${MYAPPX_DEBUG}
+    #         JAVA_OPTIONS: "-Xms512M -Xmx1024M"
+    #         DB_HOST: ${MYAPPX_DB_HOST}
+    #         DB_PORT: ${MYAPPX_DB_PORT}
+    #         DB_NAME: ${MYAPPX_DB_NAME}
+    #         DB_USER: ${MYAPPX_DB_USER}
+    #         DB_PASS: ${MYAPPX_DB_PASS}
+    #         DB_ADMIN_PASS: ${POSTGRES_PASSWORD}
+    #         MIGRATE_EXISTING_DATABASE: ${MYAPPX_MIGRATE_EXISTING_DATABASE}
+    #     build:
+    #         context: .
+    #         # dockerfile: Server.Karaf.Dockerfile
+    #         dockerfile: Server.Karaf.app.Dockerfile
+    #     ports:
+    #         - 5005:5005
+    #         - 8080:8080
+    #     networks:
+    #         - default-net
+    #     labels:
+    #         - "traefik.enable=true"
+    #         - "traefik.http.routers.myappx-server.rule=Host(`localhost`) && PathPrefix(`/`)"
+    #         - "traefik.http.routers.myappx-server.entrypoints=websecure"
+    #         - "traefik.http.routers.myappx-server.tls=true"
+    #         - "traefik.http.services.myappx-server.loadbalancer.server.port=8080"

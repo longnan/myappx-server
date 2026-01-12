@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--iDempiere(r) Release 11_2023-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2024 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="zh_CN" table="AD_Menu">
+ <row id="100" trl="Y">
+  <value column="Name" original="Invoice Inquiry">发票查询</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="153" trl="Y">
+  <value column="Name" original="Application Dictionary">应用字典</value>
+  <value column="Description" original="Maintain Application Dictionary">维护应用字典</value>
+ </row>
+ <row id="155" trl="Y">
+  <value column="Name" original="General Rules">总体配置</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="156" trl="Y">
+  <value column="Name" original="Tenant Rules">租户配置</value>
+  <value column="Description" original="Maintain Tenant Rules">维护租户级配置</value>
+ </row>
+ <row id="157" trl="Y">
+  <value column="Name" original="Data">数据维护</value>
+  <value column="Description" original="Maintain Data">维护数据</value>
+ </row>
+ <row id="158" trl="Y">
+  <value column="Name" original="Performance Measurement">绩效设置</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="159" trl="Y">
+  <value column="Name" original="Utility">实用工具</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="160" trl="Y">
+  <value column="Name" original="Project Management">项目管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="161" trl="Y">
+  <value column="Name" original="System Rules">系统配置</value>
+  <value column="Description" original="General System Rules">总体系统配置</value>
+ </row>
+ <row id="163" trl="Y">
+  <value column="Name" original="Data Import">数据导入</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="164" trl="Y">
+  <value column="Name" original="Accounting Rules">会计配置</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="165" trl="Y">
+  <value column="Name" original="Business Partner Rules">业务伙伴配置</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="166" trl="Y">
+  <value column="Name" original="Quote-to-Invoice (Sales) ">销售管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="167" trl="Y">
+  <value column="Name" original="Material Management Rules">物料配置</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="175" trl="Y">
+  <value column="Name" original="Organization Rules">组织配置</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="183" trl="Y">
+  <value column="Name" original="Material Management and Pricing">库存及存货核算管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="203" trl="Y">
+  <value column="Name" original="Requisition-to-Invoice (Purchasing)">采购管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="218" trl="Y">
+  <value column="Name" original="System Admin">系统管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="236" trl="Y">
+  <value column="Name" original="Open Items (Financial Movements and Aging)">未清项(财务活动及账龄)</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="263" trl="Y">
+  <value column="Name" original="Partner Relations">伙伴管理</value>
+  <value column="Description" original="Customer Relations and Partner Management">客户关系与伙伴管理</value>
+ </row>
+ <row id="271" trl="Y">
+  <value column="Name" original="Service">服务管理</value>
+  <value column="Description" original="Service Management">服务管理</value>
+ </row>
+ <row id="272" trl="Y">
+  <value column="Name" original="Sales and Marketing">销售设置</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="278" trl="Y">
+  <value column="Name" original="Performance Analysis and Accounting">总账及绩效管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="280" trl="Y">
+  <value column="Name" original="Financial Reporting">财务报表</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="326" trl="Y">
+  <value column="Name" original="Printing">打印设置</value>
+  <value column="Description" original="Print Definition">打印定义</value>
+ </row>
+ <row id="345" trl="Y">
+  <value column="Name" original="Assets">资产管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="357" trl="Y">
+  <value column="Name" original="Product Attributes">物料属性</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="367" trl="Y">
+  <value column="Name" original="Security">安全性</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="456" trl="Y">
+  <value column="Name" original="Server">服务器</value>
+  <value column="Description" original="iDempiere Server Maintenance">iDempiere服务器维护</value>
+ </row>
+ <row id="457" trl="Y">
+  <value column="Name" original="Sales Orders">销售订单</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="458" trl="Y">
+  <value column="Name" original="Sales Invoices">销售发票</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="459" trl="Y">
+  <value column="Name" original="Shipments">发货业务</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="501" trl="Y">
+  <value column="Name" original="Workflow">工作流</value>
+  <value column="Description" original="iDempiere Workflow">iDempiere工作流</value>
+ </row>
+ <row id="522" trl="Y">
+  <value column="Name" original="Costing">成本核算</value>
+  <value column="Description" original="">物料的成本核算</value>
+ </row>
+ <row id="528" trl="Y">
+  <value column="Name" original="Request">请求管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="566" trl="Y">
+  <value column="Name" original="Collaboration">协同办公</value>
+  <value column="Description" original="Collaboration and Content Management">协作和内容管理</value>
+ </row>
+ <row id="50001" trl="Y">
+  <value column="Name" original="Application Packaging">应用市场</value>
+  <value column="Description" original="Import and export packaging">导入或导出应用程序包</value>
+ </row>
+ <row id="53098" trl="Y">
+  <value column="Name" original="Replication Data">数据复制</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="53133" trl="Y">
+  <value column="Name" original="Customer Service">客户服务</value>
+  <value column="Description" original="Customer Related Assets">客户资产</value>
+ </row>
+ <row id="53139" trl="Y">
+  <value column="Name" original="Asset Transactions ">资产事务</value>
+  <value column="Description" original="Asset Transactions (Addition, Disposal, Split &amp; Transfer)">资产事务(增加、处置、分割和转让)</value>
+ </row>
+ <row id="53149" trl="Y">
+  <value column="Name" original="Depreciation Processing">折旧处理</value>
+  <value column="Description" original="Applications to Process Fixed Assets to the GL">应用程序-处理固定资产至总账</value>
+ </row>
+ <row id="53155" trl="Y">
+  <value column="Name" original="Reporting">报表</value>
+  <value column="Description" original="Reporting for fixed assets">固定资产报表</value>
+ </row>
+ <row id="53171" trl="Y">
+  <value column="Name" original="Depreciation Setup">折旧设置</value>
+  <value column="Description" original="Applications to setup and maintain depreciation">用于设置和维护折旧的程序</value>
+ </row>
+ <row id="53242" trl="Y">
+  <value column="Name" original="Returns">退货管理</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="53247" trl="Y">
+  <value column="Name" original="EDI">EDI 日志</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="53296" trl="Y">
+  <value column="Name" original="Manufacturing">简单制造</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="53363" trl="Y">
+  <value column="Name" original="Sales Management">客户关系</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200178" trl="N">
+  <value column="Name" original="External Authorization">外部授权</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="200184" trl="N">
+  <value column="Name" original="Multi Factor Authentication">多因子认证</value>
+  <value column="Description" original=""/>
+ </row>
+</idempiereTrl>

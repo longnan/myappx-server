@@ -1,0 +1,36 @@
+networks:
+    default-net:
+        external: true
+        name: myappx-net
+
+volumes:
+    pgsql_data:
+        external: true
+        name : myappx_pgsql_data
+
+services:
+    # PG Primary
+    pgsql-primary:
+        image: postgres:${IMAGE_POSTGRESQL_TAG}
+        container_name: myappx-pgserver
+        restart: unless-stopped
+        environment:
+            - TZ=${LOCAL_TZ}
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            # MYAPPX
+            - MYAPPX_DB_NAME=${MYAPPX_DB_NAME}
+            - MYAPPX_DB_USER=${MYAPPX_DB_USER}
+            - MYAPPX_DB_PASS=${MYAPPX_DB_PASS}
+        volumes:
+            - pgsql_data:/var/lib/postgresql
+            - ./initdb-primary/:/docker-entrypoint-initdb.d/
+            - ./etc/postgres.conf:/etc/postgresql/postgresql.conf
+            - ./etc/pg_hba.conf:/etc/postgresql/pg_hba.conf
+        command: "postgres -c config_file=/etc/postgresql/postgresql.conf -c hba_file=/etc/postgresql/pg_hba.conf" 
+        ports:
+            - 5432:5432
+        networks:
+            default-net:
+                aliases:
+                    - pgserver

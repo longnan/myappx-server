@@ -1,0 +1,39 @@
+networks:
+    default-net:
+        external: true
+        name: myappx-net
+
+volumes:
+    pgadmin_data:
+        external: true
+        name : myappx_pgadmin_data
+
+services:
+    pgadmin4:
+        image: dpage/pgadmin4:${IMAGE_PGADMIN4_TAG}
+        container_name: myappx-pgadmin4
+        restart: unless-stopped
+        environment:
+            PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-'pgadmin4@local.corp'}
+            PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-'pgadmin4'}
+            PGADMIN_DISABLE_POSTFIX: 'True'
+            # https://www.pgadmin.org/docs/pgadmin4/latest/config_py.html
+            PGADMIN_CONFIG_MAIL_SERVER: ${PGADMIN_CONFIG_MAIL_SERVER:-"'greenmail'"}
+            PGADMIN_CONFIG_MAIL_PORT: ${PGADMIN_CONFIG_MAIL_PORT:-465}
+            PGADMIN_CONFIG_MAIL_USE_SSL: ${PGADMIN_CONFIG_MAIL_USE_SSL:-'True'}
+            PGADMIN_CONFIG_SECURITY_EMAIL_SENDER: ${PGADMIN_CONFIG_SECURITY_EMAIL_SENDER:-"'no-reply@local.corp'"}
+            PGADMIN_CONFIG_MAX_LOGIN_ATTEMPTS: 0
+            PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+            SCRIPT_NAME: '/pgadmin4'
+        volumes:
+            - ./config/servers.json:/pgadmin4/servers.json
+            - pgadmin_data:/var/lib/pgadmin
+        networks:
+            - default-net
+        labels: 
+            # https://localhost/pgadmin4/ 
+            - "traefik.enable=true"
+            - "traefik.http.routers.pgadmin4.entrypoints=websecure"
+            - "traefik.http.routers.pgadmin4.rule=Host(`localhost`) && PathPrefix(`/pgadmin4`)"
+            - "traefik.http.routers.pgadmin4.tls=true"
+            - "traefik.http.services.pgadmin4.loadbalancer.server.port=80"

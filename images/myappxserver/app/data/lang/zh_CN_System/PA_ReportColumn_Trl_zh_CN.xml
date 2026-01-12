@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--iDempiere(r) Release 11_2023-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2024 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="zh_CN" table="PA_ReportColumn">
+ <row id="100" trl="N">
+  <value column="Name" original="Begin Year Balance">年初余额</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="101" trl="N">
+  <value column="Name" original="Period Activity">期间活动</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="102" trl="N">
+  <value column="Name" original="End Year Balance">年末余额</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="103" trl="N">
+  <value column="Name" original="End Total Balance">期末总余额</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="104" trl="N">
+  <value column="Name" original="Begin Total Balance">开始总余额</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="105" trl="N">
+  <value column="Name" original="Period Quantity">期间数量</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="106" trl="N">
+  <value column="Name" original="Budget YTD">今年的预算</value>
+  <value column="Description" original="Budget Year to Date">今年的预算</value>
+ </row>
+ <row id="107" trl="N">
+  <value column="Name" original="Actual YTD">今年的实绩</value>
+  <value column="Description" original="Actual Year To Date">今年的实绩</value>
+ </row>
+ <row id="108" trl="N">
+  <value column="Name" original="Commitment YTD">今年的投入</value>
+  <value column="Description" original="Commitment Year to Date">今年的投入</value>
+ </row>
+ <row id="109" trl="N">
+  <value column="Name" original="Reservations YTD">今年的预定</value>
+  <value column="Description" original="Reservations Year to Date">今年的预定</value>
+ </row>
+ <row id="110" trl="N">
+  <value column="Name" original="Budget Spent">预算支出</value>
+  <value column="Description" original=""/>
+ </row>
+ <row id="111" trl="N">
+  <value column="Name" original="Budget Available">可用预算</value>
+  <value column="Description" original=""/>
+ </row>
+</idempiereTrl>

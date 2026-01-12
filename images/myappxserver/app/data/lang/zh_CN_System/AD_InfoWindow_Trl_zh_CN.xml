@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--iDempiere(r) Release 11_2023-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2024 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="zh_CN" table="AD_InfoWindow">
+ <row id="200000" trl="Y">
+  <value column="Name" original="Product Info">物料信息</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200001" trl="Y">
+  <value column="Name" original="Business Partner Info">业务伙伴</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200002" trl="Y">
+  <value column="Name" original="Order Info">订单信息</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200003" trl="Y">
+  <value column="Name" original="Invoice Info">发票信息</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200004" trl="Y">
+  <value column="Name" original="Shipment Info">收发货信息</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200005" trl="Y">
+  <value column="Name" original="Payment Info">收付款信息</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200006" trl="Y">
+  <value column="Name" original="Resource Info">资源信息</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200007" trl="Y">
+  <value column="Name" original="Asset Info">资产信息</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200008" trl="N">
+  <value column="Name" original="Generate Shipments (manual)">生成发货单（手动）</value>
+  <value column="Description" original="Select and generate shipments">选择并生成发货单</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200011" trl="N">
+  <value column="Name" original="Generate Invoices (manual)">生成发票（手动）</value>
+  <value column="Description" original="Select and generate invoices">选择并生成发票</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200013" trl="N">
+  <value column="Name" original="Role (All)">角色(全部)</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200014" trl="N">
+  <value column="Name" original="Support Users vs Roles">支持用户与角色</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200019" trl="N">
+  <value column="Name" original="Period Control Management">期间控制管理</value>
+  <value column="Description" original="Management of Calendars, Years and Periods">日历(年份和期间)的管理</value>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200022" trl="N">
+  <value column="Name" original="Create lines from Shipment/Receipt">从发货单/收货单创建明细</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200023" trl="N">
+  <value column="Name" original="Create lines from RMA">从退货授权创建明细</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+ <row id="200024" trl="N">
+  <value column="Name" original="Create lines from Invoice">从发票创建明细</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+ </row>
+</idempiereTrl>

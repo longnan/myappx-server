@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--iDempiere(r) Release 11_2023-12-24 -Smart Suite ERP, CRM and SCM- (c) 1999-2024 iDempiere(r); Implementation: iDempiere - Supported by iDempiere community--><!--<!DOCTYPE idempiereTrl PUBLIC "-//ComPiere, Inc.//DTD iDempiere Translation 1.0//EN" "http://www.idempiere.com/dtd/idempiereTrl.dtd">--><idempiereTrl language="zh_CN" table="AD_InfoColumn">
+ <row id="200005" trl="Y">
+  <value column="Name" original="Vendor">供应商</value>
+  <value column="Description" original="Current Vendor">当前供应商</value>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="Placeholder2" original=""/>
+ </row>
+ <row id="200006" trl="Y">
+  <value column="Name" original="D">已终结</value>
+  <value column="Description" original="This product is no longer available">该物料不再有效</value>
+  <value column="Help" original="The Discontinued check box indicates a product that has been discontinued.">已终结复选框表示物料不再有效 (停产、不再进货或其他原因)</value>
+  <value column="Placeholder" original=""/>
+  <value column="Placeholder2" original=""/>
+ </row>
+ <row id="200155" trl="N">
+  <value column="Name" original="Role Name">角色名称</value>
+  <value column="Description" original=""/>
+  <value column="Help" original=""/>
+  <value column="Placeholder" original=""/>
+  <value column="Placeholder2" original=""/>
+ </row>
+</idempiereTrl>
